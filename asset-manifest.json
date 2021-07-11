@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/Fallout-4-Character-Planner/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/Fallout-4-Character-Planner/static/js/main.4f158487.chunk.js",
-    "main.js.map": "/Fallout-4-Character-Planner/static/js/main.4f158487.chunk.js.map",
+    "main.js": "/Fallout-4-Character-Planner/static/js/main.c8c669f2.chunk.js",
+    "main.js.map": "/Fallout-4-Character-Planner/static/js/main.c8c669f2.chunk.js.map",
     "runtime-main.js": "/Fallout-4-Character-Planner/static/js/runtime-main.f7572e88.js",
     "runtime-main.js.map": "/Fallout-4-Character-Planner/static/js/runtime-main.f7572e88.js.map",
     "static/css/2.fdb32a1e.chunk.css": "/Fallout-4-Character-Planner/static/css/2.fdb32a1e.chunk.css",
-    "static/js/2.f97f0ac9.chunk.js": "/Fallout-4-Character-Planner/static/js/2.f97f0ac9.chunk.js",
-    "static/js/2.f97f0ac9.chunk.js.map": "/Fallout-4-Character-Planner/static/js/2.f97f0ac9.chunk.js.map",
+    "static/js/2.b48014f3.chunk.js": "/Fallout-4-Character-Planner/static/js/2.b48014f3.chunk.js",
+    "static/js/2.b48014f3.chunk.js.map": "/Fallout-4-Character-Planner/static/js/2.b48014f3.chunk.js.map",
     "static/js/3.92d65a54.chunk.js": "/Fallout-4-Character-Planner/static/js/3.92d65a54.chunk.js",
     "static/js/3.92d65a54.chunk.js.map": "/Fallout-4-Character-Planner/static/js/3.92d65a54.chunk.js.map",
     "index.html": "/Fallout-4-Character-Planner/index.html",
     "static/css/2.fdb32a1e.chunk.css.map": "/Fallout-4-Character-Planner/static/css/2.fdb32a1e.chunk.css.map",
     "static/css/main.6dea0f05.chunk.css.map": "/Fallout-4-Character-Planner/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.f97f0ac9.chunk.js.LICENSE.txt": "/Fallout-4-Character-Planner/static/js/2.f97f0ac9.chunk.js.LICENSE.txt"
+    "static/js/2.b48014f3.chunk.js.LICENSE.txt": "/Fallout-4-Character-Planner/static/js/2.b48014f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f7572e88.js",
     "static/css/2.fdb32a1e.chunk.css",
-    "static/js/2.f97f0ac9.chunk.js",
+    "static/js/2.b48014f3.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.4f158487.chunk.js"
+    "static/js/main.c8c669f2.chunk.js"
   ]
 }
