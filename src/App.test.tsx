@@ -2,7 +2,7 @@ import "./__mocks__/matchMedia.mock.js";
 
 import React from "react";
 
-import {render} from "@testing-library/react";
+import {fireEvent, render, screen} from "@testing-library/react";
 import App from "./App";
 import {act} from "react-dom/test-utils";
 
@@ -24,4 +24,12 @@ it("renders Fallout 4 Character Planner in Navbar.Brand", () => {
         expect(actual.parentElement).toBeInTheDocument()
         expect(actual.parentElement?.className).toContain("navbar-brand")
     })
+})
+
+it("randomizes", async () => {
+    render(<App/>)
+    fireEvent.click(screen.getByText("Randomize"))
+
+    const actual = await screen.getByText("Remaining perk points: 0")
+    expect(actual).toBeInTheDocument()
 })

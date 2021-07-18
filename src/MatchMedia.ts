@@ -26,7 +26,7 @@ const mediaSizes = {
 
 export const useMatchMedia = () => {
 
-    const [mediaSize, setMediaSize] = useState<string>()
+    const [mediaSize, setMediaSize] = useState<string>("lg")
 
     const gt = (breakpoint: string) => {
         return mediaSize ? (Breakpoints as any)[mediaSize] > (Breakpoints as any)[breakpoint] : true
