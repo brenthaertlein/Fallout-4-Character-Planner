@@ -2,9 +2,6 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [ master ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ master ]
 jobs:
   Deploy-GitHub-Pages:
     runs-on: ubuntu-latest

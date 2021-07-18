@@ -64,5 +64,5 @@ it("opens share modal", async () => {
 
 it("opens history modal", async () => {
     render(<App/>)
-    fireEvent.click(screen.getByText("Save"))
+    fireEvent.click(screen.getByText("Show History"))
 })
