@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Fallout-4-Character-Planner/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/Fallout-4-Character-Planner/static/js/main.c2a6ea41.chunk.js",
-    "main.js.map": "/Fallout-4-Character-Planner/static/js/main.c2a6ea41.chunk.js.map",
+    "main.js": "/Fallout-4-Character-Planner/static/js/main.d08e18ad.chunk.js",
+    "main.js.map": "/Fallout-4-Character-Planner/static/js/main.d08e18ad.chunk.js.map",
     "runtime-main.js": "/Fallout-4-Character-Planner/static/js/runtime-main.78428693.js",
     "runtime-main.js.map": "/Fallout-4-Character-Planner/static/js/runtime-main.78428693.js.map",
     "static/css/2.4be38407.chunk.css": "/Fallout-4-Character-Planner/static/css/2.4be38407.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.4be38407.chunk.css",
     "static/js/2.52a23226.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.c2a6ea41.chunk.js"
+    "static/js/main.d08e18ad.chunk.js"
   ]
 }
