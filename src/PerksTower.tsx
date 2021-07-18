@@ -16,6 +16,7 @@ const PerksTower = () => {
                         PerksData
                         .map(it =>
                             <ToggleButton
+                                key={it.special}
                                 onClick={() => setCategory(it)}
                                 value={it.special}
                                 variant={category?.special === it.special ? "primary" : "light"}

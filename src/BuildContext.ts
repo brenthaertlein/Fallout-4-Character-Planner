@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useState} from "react";
-import StatsContext, {SPECIAL} from "./StatsContext";
+import StatsContext, {DEFAULT_SPECIAL, SPECIAL} from "./StatsContext";
 import PerksContext, {Perk} from "./PerksContext";
 import LZUTF8 from "lzutf8";
 import {v4 as uuid_v4} from "uuid";
@@ -21,7 +21,7 @@ const setDb = (collection: Entry[]) => {
     window.localStorage.setItem("DATABASE", JSON.stringify(collection))
 }
 
-type Metadata = { id: string, name: string, createdAt: Date, updatedAt: Date }
+export type Metadata = { id: string, name: string, createdAt: Date, updatedAt: Date }
 
 type BuildData = {
     SPECIAL: SPECIAL,
@@ -63,7 +63,7 @@ export const useBuild = ({name: buildName}: UseBuild) => {
         const one = db.find(it => it.id === id)
         if (one) {
             const {id, name, data, createdAt, updatedAt} = one
-            const build = JSON.parse(LZUTF8.decompress(data, {inputEncoding: "Base64"}) ?? "{}") as BuildData
+            const build = JSON.parse(data ? LZUTF8.decompress(data, {inputEncoding: "Base64"}) : "{}") as BuildData
             return {id, name, ...build, createdAt, updatedAt}
         }
         return undefined
@@ -91,7 +91,7 @@ export const useBuild = ({name: buildName}: UseBuild) => {
     const load = (id: string) => {
         const target = get(id)
         if (target) {
-            const {id, name, perks, SPECIAL} = target
+            const {id = uuid_v4(), name, perks = [], SPECIAL = DEFAULT_SPECIAL} = target
             setId(id)
             setName(name)
             setPerks(perks)
@@ -114,7 +114,7 @@ export const useBuild = ({name: buildName}: UseBuild) => {
     } as Build
 }
 
-type Build = {
+export type Build = {
     id: string,
     name?: string,
     lastSaved?: Date,
