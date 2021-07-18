@@ -33,3 +33,36 @@ it("randomizes", async () => {
     const actual = await screen.getByText("Remaining perk points: 0")
     expect(actual).toBeInTheDocument()
 })
+
+it("resets", async () => {
+    render(<App/>)
+    fireEvent.click(screen.getByText("Randomize"))
+    fireEvent.click(screen.getByText("Reset"))
+
+    const actual = await screen.getByText("Remaining perk points: 49")
+    expect(actual).toBeInTheDocument()
+})
+
+it("creates a new build", async () => {
+    render(<App/>)
+    fireEvent.click(screen.getByText("Randomize"))
+    fireEvent.click(screen.getByText("New"))
+
+    const actual = await screen.getByText("Remaining perk points: 49")
+    expect(actual).toBeInTheDocument()
+})
+
+it("opens save modal", async () => {
+    render(<App/>)
+    fireEvent.click(screen.getByText("Save"))
+})
+
+it("opens share modal", async () => {
+    render(<App/>)
+    fireEvent.click(screen.getByText("Share"))
+})
+
+it("opens history modal", async () => {
+    render(<App/>)
+    fireEvent.click(screen.getByText("Show History"))
+})
