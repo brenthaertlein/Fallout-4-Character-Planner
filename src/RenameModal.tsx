@@ -12,6 +12,7 @@ const RenameModal = ({show, setShow}: UseModal) => {
             <Modal.Body>
                 <InputGroup>
                     <Form.Control
+                        data-testid={"RenameModal-name"}
                         type={"text"}
                         value={name}
                         onChange={e => setName(e.target.value)}

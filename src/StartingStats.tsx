@@ -66,6 +66,7 @@ const Stat = ({name, value}: StatProps) => {
                     -
                 </Button>
                 <span
+                    title={`${name}-value`}
                     style={{
                         paddingLeft: 10,
                         paddingRight: 10,

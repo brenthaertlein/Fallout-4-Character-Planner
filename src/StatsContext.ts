@@ -29,7 +29,7 @@ export enum StatType {
     STRENGTH = "STRENGTH", PERCEPTION = "PERCEPTION", ENDURANCE = "ENDURANCE", CHARISMA = "CHARISMA", INTELLIGENCE = "INTELLIGENCE", AGILITY = "AGILITY", LUCK = "LUCK"
 }
 
-const defaultSpecial = Object.keys(StatType).reduce((obj, key) => {
+export const DEFAULT_SPECIAL = Object.keys(StatType).reduce((obj, key) => {
     obj[key] = 1
     return obj
 }, {} as any) as SPECIAL
@@ -37,7 +37,7 @@ const defaultSpecial = Object.keys(StatType).reduce((obj, key) => {
 const MAX_POINTS = 28
 
 export const useStats = ({
-                             SPECIAL: special = defaultSpecial,
+                             SPECIAL: special = DEFAULT_SPECIAL,
                              level: initialLevel = 50,
                              bobbleheads: savedBobbleheads = []
                          }: { SPECIAL?: SPECIAL, level?: number, bobbleheads: [] }): Stats => {
@@ -67,7 +67,7 @@ export const useStats = ({
     const getRank = (stat: string): number => (SPECIAL as any)[stat]
 
     const reset = () => {
-        setSpecial(defaultSpecial)
+        setSpecial(DEFAULT_SPECIAL)
         setBobbleheads([])
     }
 
@@ -99,6 +99,6 @@ export const useStats = ({
     } as Stats;
 }
 
-const StatsContext = React.createContext<Stats>({SPECIAL: defaultSpecial} as Stats)
+const StatsContext = React.createContext<Stats>({SPECIAL: DEFAULT_SPECIAL} as Stats)
 
 export default StatsContext

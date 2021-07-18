@@ -4,7 +4,7 @@ import BuildContext from "./BuildContext";
 const BuildInfo = () => {
     const {name} = useContext(BuildContext)
     return (
-        <h1 style={{marginBottom: 20}}>
+        <h1 style={{marginBottom: 20}} title={"BuildInfo-name"}>
             {
                 name
                 // || <span style={{color: "grey", fontStyle: "italic"}}>Choose a build name</span>
