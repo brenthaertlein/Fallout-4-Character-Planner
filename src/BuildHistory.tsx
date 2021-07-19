@@ -1,5 +1,5 @@
 import React, {
-    CSSProperties,
+    CSSProperties, HTMLAttributes,
     MouseEventHandler,
     PropsWithChildren,
     RefObject,
@@ -54,25 +54,32 @@ const BuildHistory = () => {
                             }}
                             message={"Are you sure you want to remove all items?"}
                         >
-                            <span style={{
-                                fontSize: "2em",
-                                paddingRight: 8,
-                                color: "gray",
-                                fontStyle: "italic"
-                            }}>
+                            <span
+                                style={{
+                                    fontSize: "2em",
+                                    paddingRight: 8,
+                                    color: "gray",
+                                    fontStyle: "italic"
+                                }}
+                            >
                                 Clear history
                             </span>
-                            <RemoveButton confirmable={true} fontSize={24}
-                                          onClick={() => removeAll()}/>
+                            <RemoveButton
+                                confirmable={true}
+                                fontSize={24}
+                                onClick={() => removeAll()}
+                                title={"removeAll"}
+                            />
                         </ConfirmRemoveButton>
                     </span>
                 </h3>
             </span>
-            <ListGroup>
+            <ListGroup title={"BuildHistory-list"}>
                 {
                     history.map(entry =>
                         <ListGroupItem
                             key={entry.id}
+                            title={`BuildHistory-listitem-${entry.id}`}
                             style={{
                                 display: "flex",
                                 alignItems: "center",
@@ -115,10 +122,13 @@ const BuildHistory = () => {
                                         color: "gray",
                                         fontStyle: "italic"
                                     }}>
-                                        Last Updated: {entry.updatedAt}
+                                        Last Updated: {entry.updatedAt.toISOString ? entry.updatedAt.toISOString() : entry.updatedAt}
                                     </span>
-                                    <RemoveButton confirmable={true}
-                                                  onClick={() => remove(entry.id)}/>
+                                    <RemoveButton
+                                        confirmable={true}
+                                        onClick={() => remove(entry.id)}
+                                        title={"remove"}
+                                    />
                                 </ConfirmRemoveButton>
                             </span>
                         </ListGroupItem>
@@ -224,26 +234,25 @@ type RemoveButtonProps =
     {
         fontSize?: number,
         onClick?: MouseEventHandler<SVGSVGElement> | undefined,
-        confirmable
-            :
-            boolean
+        confirmable: boolean
     }
 
 const RemoveButton = (
     {
-        fontSize = 16, onClick = noop
+        fontSize = 16, onClick = noop, confirmable, ...props
     }
-        : RemoveButtonProps) =>
-    <svg xmlns="http://www.w3.org/2000/svg" width={`${fontSize}`} height={`${fontSize}`}
-         fill="currentColor" className="bi bi-x-circle"
-         viewBox="0 0 16 16"
-         onClick={onClick}
-         style={{cursor: "pointer", fontSize}}
-    >
-        <path
-            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-        <path
-            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-    </svg>
+        : RemoveButtonProps & HTMLAttributes<HTMLSpanElement>) =>
+    <span {...props} onClick={onClick}>
+        <svg xmlns="http://www.w3.org/2000/svg" width={`${fontSize}`} height={`${fontSize}`}
+             fill="currentColor" className="bi bi-x-circle"
+             viewBox="0 0 16 16"
+             style={{cursor: "pointer", fontSize}}
+        >
+            <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+    </span>
 
 export default BuildHistory
