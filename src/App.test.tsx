@@ -108,7 +108,7 @@ it("can increment a stat", async () => {
     fireEvent.click(sample)
 })
 
-it("can increment and decrement a specific stat", () => {
+it("can increment and decrement a specific stat", async () => {
     render(<App/>)
 
     const actual = screen.getByText(/PERCEPTION/)
@@ -120,19 +120,21 @@ it("can increment and decrement a specific stat", () => {
         fail()
     }
 
-    const plus = getByText(parent!!, /\+/)
+    const plus = await getByText(parent, /\+/)
     expect(plus).toBeInTheDocument()
 
     fireEvent.click(plus)
 
-    const value = getByTitle(parent!!, "PERCEPTION-value")
+    const value = await getByTitle(parent, "PERCEPTION-value")
     expect(value).toBeInTheDocument()
     expect(value).toHaveTextContent("2")
 
-    const minus = getByText(parent, /-/)
+    const minus = await getByText(parent, /-/)
     expect(minus).toBeInTheDocument()
 
-    waitFor(() => expect(value).toBe("1"))
+    fireEvent.click(minus)
+
+    expect(value).toHaveTextContent("1")
 })
 
 it("has build history", async () => {
