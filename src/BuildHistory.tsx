@@ -10,7 +10,6 @@ import React, {
 } from "react";
 import BuildContext from "./BuildContext";
 import {ListGroup, ListGroupItem} from "react-bootstrap";
-import {v4 as uuid_v4} from "uuid";
 import {useMatchMedia} from "./MatchMedia";
 
 const BuildHistory = () => {
@@ -206,7 +205,6 @@ const ConfirmRemoveButton = ({
                                 child.props.confirmable ?
                                     <span
                                         style={{marginLeft: "auto", textAlign: "end",}}
-                                        key={uuid_v4()}
                                         onClickCapture={(e: React.MouseEvent<HTMLSpanElement>) => confirm(e)}
                                         ref={ref}
                                     >
